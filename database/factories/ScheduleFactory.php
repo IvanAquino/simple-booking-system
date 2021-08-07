@@ -21,8 +21,13 @@ class ScheduleFactory extends Factory
      */
     public function definition()
     {
+        $now = now();
+
         return [
-            //
+            'employee_id' => 1,
+            'date' => $now->format('Y-m-d'),
+            'start_time' => '09:00',
+            'end_time' => '17:00',
         ];
     }
 }
