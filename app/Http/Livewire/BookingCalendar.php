@@ -8,10 +8,12 @@ use Livewire\Component;
 class BookingCalendar extends Component
 {
     public $calendarStartDate;
+    public $date;
 
     public function mount()
     {
         $this->calendarStartDate = now();
+        $this->setDate(now()->timestamp);
     }
 
     public function getCalendarWeekIntervalProperty()
@@ -21,6 +23,11 @@ class BookingCalendar extends Component
                 $this->calendarStartDate,
                 $this->calendarStartDate->clone()->addWeek()
             );
+    }
+
+    public function setDate($timestamp)
+    {
+        $this->date = $timestamp;
     }
 
     public function incrementCalendarWeek()
