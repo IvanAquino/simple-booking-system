@@ -27,7 +27,7 @@ class TimeSlotGenerator {
     }
 
 
-    public function applyFilter(array $filters)
+    public function applyFilters(array $filters)
     {
         foreach($filters as $filter) {
             if (!$filter instanceof Filter) {
