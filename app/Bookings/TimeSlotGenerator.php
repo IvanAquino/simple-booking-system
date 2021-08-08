@@ -34,7 +34,7 @@ class TimeSlotGenerator {
                 continue;
             }
 
-            $filter->applyFilter($this, $this->interval);
+            $filter->apply($this, $this->interval);
         }
 
         return $this;

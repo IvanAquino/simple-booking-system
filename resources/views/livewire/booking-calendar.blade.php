@@ -29,15 +29,20 @@
     </div>
 
     <div class="max-h-52 overflow-y-scroll">
-        <div class="flex flex-row items-center border-b border-gray-200">
-            <input type="radio" name="time" id="" value="" class="" />
-            <label for="" class="text-left focus:outline-none px-4 py-2 cursor-pointer flex items-center">
-                09:00
-            </label>
-        </div>
+        @if($this->availableTimeSlots->count())
+            @foreach($this->availableTimeSlots as $slot)
+                <div class="flex flex-row items-center border-b border-gray-200">
+                    <input type="radio" name="time" id="" value="" class="" />
+                    <label for="" class="text-left focus:outline-none px-4 py-2 cursor-pointer flex items-center">
+                        {{ $slot->format('g:i A') }}
+                    </label>
+                </div>
+            @endforeach
+        @else
+            <div class="text-center text-gray-700 px-4 py-2">
+                No available slots
+            </div>
+        @endif
     </div>
 
-    <div class="text-center text-gray-700 px-4 py-2">
-        No available slots
-    </div>
 </div>

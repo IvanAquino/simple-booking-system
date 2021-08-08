@@ -30,9 +30,10 @@
             <label for="appointment" class="inline-block text-gray-700 font-bold mb-2">
                 Select appointment time
             </label>
+
+            <livewire:booking-calendar :service="$this->selectedService" :employee="$this->selectedEmployee" :key="optional($this->selectedEmployee)->id" />
         </div>
 
-        <livewire:booking-calendar />
 
     </form>
 </div>

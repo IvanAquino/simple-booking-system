@@ -65,5 +65,24 @@ class DatabaseSeeder extends Seeder
             'start_time' => '09:00',
             'end_time' => '17:00',
         ]);
+        Schedule::create([
+            'employee_id' => $employee_2->id,
+            'date' => $now->format('Y-m-d'),
+            'start_time' => '09:00',
+            'end_time' => '17:00',
+        ]);
+        $now->addDay();
+        Schedule::create([
+            'employee_id' => $employee_1->id,
+            'date' => $now->format('Y-m-d'),
+            'start_time' => '09:00',
+            'end_time' => '17:00',
+        ]);
+        Schedule::create([
+            'employee_id' => $employee_2->id,
+            'date' => $now->format('Y-m-d'),
+            'start_time' => '09:00',
+            'end_time' => '17:00',
+        ]);
     }
 }
